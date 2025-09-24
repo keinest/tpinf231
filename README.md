@@ -1,12 +1,12 @@
 # tpinf231
 
-# 🖥️ Mini système de calculs mathématiques
+# Mini système de calculs mathématiques
 
 Ce projet est un programme en langage C qui offre une suite d'outils mathématiques pour la manipulation de matrices et de vecteurs, ainsi que d'autres calculs numériques. Il est conçu pour être facile à utiliser avec une interface utilisateur en console.
 
 ---
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 
 Le programme propose un menu principal avec les options suivantes :
 
@@ -23,7 +23,7 @@ Le programme propose un menu principal avec les options suivantes :
 
 ---
 
-## 🛠️ Compilation et exécution
+## Compilation et exécution
 
 ### Prérequis
 
@@ -46,7 +46,7 @@ Le programme propose un menu principal avec les options suivantes :
 
 ---
 
-## 📁 Structure des fichiers
+## Structure des fichiers
 
 * `main.c`: Contient la fonction `main` et l'interface utilisateur. Il gère la logique de navigation à travers le menu et appelle les fonctions appropriées en fonction du choix de l'utilisateur.
 * `tp231.c`: Contient les implémentations des fonctions mathématiques et utilitaires, telles que l'addition de matrices, le produit vectoriel, la gestion de la mémoire, et les validations de saisie.
