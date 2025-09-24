@@ -51,3 +51,13 @@ Le programme propose un menu principal avec les options suivantes :
 * `main.c`: Contient la fonction `main` et l'interface utilisateur. Il gère la logique de navigation à travers le menu et appelle les fonctions appropriées en fonction du choix de l'utilisateur.
 * `tp231.c`: Contient les implémentations des fonctions mathématiques et utilitaires, telles que l'addition de matrices, le produit vectoriel, la gestion de la mémoire, et les validations de saisie.
 * `tp231.h`: Le fichier d'en-tête qui déclare toutes les fonctions publiques disponibles dans le projet, ce qui permet de lier les différents fichiers source.
+
+
+## Contributeurs
+
+    .NGNOMBOUEPO PEDEDZOUE KEINEST -> 23U2793
+    .IKENG HENGA FLORENT DAVID -> 22T2857
+    .NGUEFAH ZEUTCHA CAROL JUNIOR -> 23U2597
+    .ESSENGUE BILOA MICHEL VICTORIEN -> 
+    .BIHOYA NSOH FRANCK EMMANNUEL -> 
+    .TUINTCHEU LINARESSE JOBRELLE -> 24F2760
