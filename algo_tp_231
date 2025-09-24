@@ -1,0 +1,249 @@
+Algorithme calculs_mathematiques
+
+Variables
+  choix : entier
+  mot : chaîne de caractères
+  lignes, colonnes : entier
+  matrice_A, matrice_B : tableau dynamique de réels (ou pointeurs de pointeurs)
+  vecteur : tableau dynamique de réels
+  elements, trouve : entier
+  nbre1, nbre2 : entier
+
+Début
+  Faire
+    // Afficher le menu
+    Appeler la fonction utilisateur_interface()
+    
+    // Lire le choix de l'utilisateur
+    Lire mot
+    
+    // Boucle de validation de la saisie
+    Tant que non(vérifier_saisie_entier(mot))
+      Afficher "Format de nombre incorrect ! Reessayez!"
+      Appeler la fonction utilisateur_interface()
+      Lire mot
+    Fin Tant que
+    
+    // Convertir la saisie en entier
+    choix <- convertir_en_entier(mot)
+    
+    // Traiter le choix
+    Selon choix
+      Cas 1 : // Addition matricielle
+        Effacer l'écran
+        Afficher "~~~~~~~~ Addition matricielle ~~~~~~~~"
+        
+        // Lire les dimensions de la matrice A
+        Appeler la fonction lire_dimensions_matrice(lignes, colonnes)
+        matrice_A <- allouer_matrice(lignes, colonnes)
+        
+        // Lire les dimensions de la matrice B
+        Appeler la fonction lire_dimensions_matrice(lignes_B, colonnes_B)
+        matrice_B <- allouer_matrice(lignes_B, colonnes_B)
+        
+        // Vérifier si les matrices sont de même dimension
+        Si lignes <> lignes_B ou colonnes ≠ colonnes_B Alors
+          Afficher "Vos matrices doivent être dans la même dimension !"
+        Sinon
+          Afficher "Remplissez la première matrice : "
+          Appeler la fonction remplir_matrice(matrice_A, lignes, colonnes)
+          Afficher "Votre matrice A est : "
+          Appeler la fonction afficher_matrice(matrice_A, lignes, colonnes)
+          
+          Afficher "Remplissez la deuxième matrice : "
+          Appeler la fonction remplir_matrice(matrice_B, lignes_B, colonnes_B)
+          Afficher "Votre matrice B est : "
+          Appeler la fonction afficher_matrice(matrice_B, lignes_B, colonnes_B)
+          
+          Appeler la fonction sommer_matrices(matrice_A, matrice_B, lignes, colonnes)
+        Fin Si
+        
+        Libérer_matrice(matrice_A, lignes)
+        Libérer_matrice(matrice_B, lignes_B)
+        Appeler la fonction stop()
+      
+      Cas 2 : // Multiplication matricielle
+        Effacer l'écran
+        Afficher "~~~~~~~~ Multiplication matricielle ~~~~~~~~"
+        
+        Appeler la fonction lire_dimensions_matrice(lignes_A, colonnes_A)
+        matrice_A ← allouer_matrice(lignes_A, colonnes_A)
+        
+        Appeler la fonction lire_dimensions_matrice(lignes_B, colonnes_B)
+        matrice_B ← allouer_matrice(lignes_B, colonnes_B)
+        
+        Si colonnes_A ≠ lignes_B Alors
+          Afficher "Impossible d'effectuer une multiplication avec ces deux matrices."
+        Sinon
+          Afficher "Remplissez la matrice A : "
+          Appeler la fonction remplir_matrice(matrice_A, lignes_A, colonnes_A)
+          Afficher "Votre matrice A est : "
+          Appeler la fonction afficher_matrice(matrice_A, lignes_A, colonnes_A)
+          
+          Afficher "Remplissez la matrice B : "
+          Appeler la fonction remplir_matrice(matrice_B, lignes_B, colonnes_B)
+          Afficher "Votre matrice B est : "
+          Appeler la fonction afficher_matrice(matrice_B, lignes_B, colonnes_B)
+          
+          Appeler la fonction multiplier_matrices(matrice_A, matrice_B, lignes_A, colonnes_A, colonnes_B)
+        Fin Si
+        
+        Libérer_matrice(matrice_A, lignes_A)
+        Libérer_matrice(matrice_B, lignes_B)
+        Appeler la fonction stop()
+      
+      Cas 3 : // Recherche séquentielle
+        Effacer l'écran
+        Afficher "~~~~~~~~ Recherche sequentielle ~~~~~~~~"
+        
+        Appeler la fonction lire_nombre_elements_vecteur(elements)
+        vecteur <- allouer_vecteur(elements)
+        
+        Appeler la fonction remplir_vecteur(vecteur, elements)
+        Afficher "Votre tableau est : "
+        Appeler la fonction afficher_vecteur(vecteur, elements)
+        
+        Lire "Entrer la valeur que vous souhaitez rechercher : "
+        Lire mot
+        Tant que non(vérifier_saisie_réel(mot))
+          Afficher "Format de nombre incorrect ! Reessayez !"
+          Lire "Entrer la valeur que vous souhaitez rechercher : "
+          Lire mot
+        Fin Tant que
+        trouve <- convertir_en_réel(mot)
+        
+        Appeler la fonction recherche_sequentielle(vecteur, elements, trouve)
+        Libérer_vecteur(vecteur)
+        Appeler la fonction stop()
+      
+      Cas 4 : // Multiplication par addition
+        Effacer l'écran
+        Afficher "~~~~~~~~ Multiplication(AxB) par addition successive ~~~~~~~~"
+        
+        Lire "Entrer le premier nombre : "
+        Lire mot
+        Tant que non(vérifier_saisie_entier(mot))
+          Afficher "Format de nombre incorrect ! Reessayez !"
+          Lire "Entrer le premier nombre : "
+          Lire mot
+        Fin Tant que
+        nbre1 <- convertir_en_entier(mot)
+        
+        Lire "Entrer le deuxieme nombre : "
+        Lire mot
+        Tant que non(vérifier_saisie_entier(mot))
+          Afficher "Format de nombre incorrect ! Reessayez !"
+          Lire "Entrer le deuxieme nombre : "
+          Lire mot
+        Fin Tant que
+        nbre2 <- convertir_en_entier(mot)
+        
+        resultat <- multiplier_par_addition(nbre1, nbre2)
+        Afficher "Le produit de ", nbre1, " par ", nbre2, " est ", resultat
+        Appeler la fonction stop()
+      
+      Cas 5 : // Vérification de l'ordre croissant d'un tableau
+        Effacer l'écran
+        Afficher "~~~~~~~~ Verification de l'ordre croissant d'un tableau ~~~~~~~~"
+        
+        Appeler la fonction lire_nombre_elements_vecteur(elements)
+        vecteur <- allouer_vecteur(elements)
+        Appeler la fonction remplir_vecteur(vecteur, elements)
+        
+        Afficher "Votre tableau est : "
+        Appeler la fonction afficher_vecteur(vecteur, elements)
+        
+        Si tester_tableau_trie(vecteur, elements) Alors
+          Afficher "Le tableau est trié !"
+        Sinon
+          Afficher "Le tableau n'est pas trié !"
+        Fin Si
+        
+        Libérer_vecteur(vecteur)
+        Appeler la fonction stop()
+      
+      Cas 6 : // Calcul du médian d'un tableau
+        Effacer l'écran
+        Afficher "~~~~~~~~ Calcul du median d'un tableau ~~~~~~~~"
+        
+        Appeler la fonction lire_nombre_elements_vecteur(elements)
+        vecteur <- allouer_vecteur(elements)
+        Appeler la fonction remplir_vecteur(vecteur, elements)
+        
+        Afficher "Votre tableau est : "
+        Appeler la fonction afficher_vecteur(vecteur, elements)
+        
+        Appeler la fonction calculer_median(vecteur, elements)
+        
+        Libérer_vecteur(vecteur)
+        Appeler la fonction stop()
+      
+      Cas 7 : // Inverser un tableau
+        Effacer l'écran
+        Afficher "~~~~~~~~ Inverser un tableau ~~~~~~~~"
+        
+        Appeler la fonction lire_nombre_elements_vecteur(elements)
+        vecteur <- allouer_vecteur(elements)
+        Appeler la fonction remplir_vecteur(vecteur, elements)
+        
+        Afficher "Votre tableau initial est : "
+        Appeler la fonction afficher_vecteur(vecteur, elements)
+        
+        Appeler la fonction inverser_tableau(vecteur, elements)
+        
+        Libérer_vecteur(vecteur)
+        Appeler la fonction stop()
+      
+      Cas 8 : // Produit vectoriel
+        Effacer l'écran
+        Afficher "~~~~~~~~ Produit vectoriel ~~~~~~~~"
+        
+        vecteur_A, vecteur_B : tableau de réels [3]
+        
+        Afficher "Premier vecteur : "
+        Appeler la fonction remplir_vecteur(vecteur_A, 3)
+        
+        Afficher "Deuxième vecteur : "
+        Appeler la fonction remplir_vecteur(vecteur_B, 3)
+        
+        Appeler la fonction produit_vectoriel(vecteur_A, vecteur_B)
+        Appeler la fonction stop()
+      
+      Cas 9 : // Produit matrice-vecteur
+        Effacer l'écran
+        Afficher "~~~~~~~~ Produit matrice-vecteur ~~~~~~~~"
+        
+        Appeler la fonction lire_dimensions_matrice(lignes, colonnes)
+        Appeler la fonction lire_nombre_elements_vecteur(elements)
+        
+        Si colonnes ≠ elements Alors
+          Afficher "Impossible de réaliser cette opération !"
+        Sinon
+          matrice_A <- allouer_matrice(lignes, colonnes)
+          vecteur <- allouer_vecteur(elements)
+          
+          Appeler la fonction remplir_matrice(matrice_A, lignes, colonnes)
+          Afficher "Votre matrice est : "
+          Appeler la fonction afficher_matrice(matrice_A, lignes, colonnes)
+          
+          Appeler la fonction remplir_vecteur(vecteur, elements)
+          Afficher "Votre vecteur est : "
+          Appeler la fonction afficher_vecteur(vecteur, elements)
+          
+          Appeler la fonction produit_matrice_vecteur(matrice_A, lignes, colonnes, vecteur)
+          
+          Libérer_matrice(matrice_A, lignes)
+          Libérer_vecteur(vecteur)
+        Fin Si
+        Appeler la fonction stop()
+      
+      Cas 0 :
+        Quitter le programme
+      
+      Défaut :
+        Afficher "Option invalide !"
+        Appeler la fonction stop()
+        
+    Fin Selon
+  Tant que choix ≠ 0
+Fin
