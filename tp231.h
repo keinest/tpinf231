@@ -8,11 +8,14 @@
 #include <stdbool.h>
 #include <string.h>
 
+//Fonctions utilitaires pour la gestion des entrees utilisateur
+
 extern void user_interface(void);
 extern bool veri_value_enter(char *); 
 extern bool veri_user_enter(char *);
 extern int convert_user_enter(char *);
 extern float convert_value_enter(char *);
+
 
 extern void sum_matrix(float **, float **, int lines, int cols);
 extern void mult_matrix(float **, float **, int, int);
@@ -23,6 +26,8 @@ extern void array_median(float *, int);
 extern void reverse_array(float *, int );
 extern void cross_product(float *, float *);
 extern void matrix_cross_product(float **, int lines, int cols, float *);
+
+//Fonctions pour remplir une matrice et un vecteur
 
 extern void fill_matrix(float **, int, int);
 extern void matrix_line_col(int *,int *);
