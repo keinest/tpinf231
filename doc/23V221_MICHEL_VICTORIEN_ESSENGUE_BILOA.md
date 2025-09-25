@@ -1,4 +1,4 @@
-** 23v2439 FOTOS SOP VANEL BOLIVENT **
+** 23v2439 ESSENGUE BILOA MICHEL VICTORIEN **
 
 # Système de calculs mathématiques en C
 
@@ -22,6 +22,7 @@ Je me suis concentré sur:
 * **Vérification de l'ordre d'un tableau** : J'ai mis en œuvre la fonction `test_sort_array`, qui vérifie si un 
 tableau de nombres est trié par ordre croissant. Cette fonction parcourt les éléments pour s'assurer que chaque 
 valeur est inférieure ou égale à la suivante, renvoyant `true` si le tableau est trié et `false` dans le cas contraire.
+* **Produit vectoriel** : J'ai mis en œuvre la fonction `cross_product`, qui calcule le produit vectoriel entre deux vecteurs de dimension 3. Cette fonction est essentielle pour les applications en physique et en géométrie, et j'ai veillé à ce qu'elle soit précise et facile à utiliser pour l'utilisateur.
 
 ---
 
