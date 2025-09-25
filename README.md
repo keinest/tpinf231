@@ -61,4 +61,3 @@ Le programme propose un menu principal avec les options suivantes :
     .ESSENGUE BILOA MICHEL VICTORIEN 
     .BIHOYA NSOH FRANCK EMMANNUEL 
     .TUINTCHEU LINARESSE JOBRELLE
-    . FOTOS SOP VANEL BOLIVENT
