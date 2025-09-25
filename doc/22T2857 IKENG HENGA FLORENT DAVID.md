@@ -15,7 +15,7 @@ Ce dépôt contient un programme simple en C qui effectue diverses opérations m
 
 ### Mes contributions
 
-Je me suis concentré sur la création des composants fondamentaux du programme, afin de garantir sa robustesse et sa facilité d'utilisation. Mes contributions spécifiques comprennent :
+Je me suis concentré sur:
 
 * **Multiplication par additions successives** : J'ai mis en œuvre la fonction `mult_add`, qui calcule le produit de deux nombres entiers en utilisant une approche simple et élégante : l'addition successive. Cette méthode est non seulement un excellent exercice de programmation, mais elle illustre également un concept mathématique fondamental.
 
