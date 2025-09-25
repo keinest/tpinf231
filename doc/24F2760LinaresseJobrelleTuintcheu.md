@@ -13,7 +13,7 @@ Ce dépôt contient un programme simple en C qui effectue diverses opérations m
 
 ---
 
-### 💻 Mes contributions
+###  Mes contributions
 
 Je me suis concentré sur :
 
